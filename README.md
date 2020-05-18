@@ -9,6 +9,11 @@ https://jikan.moe/
 pip install jikanpy
 ```
 
+## Disclaimer
+The program takes a few minutes to execute (2 - 3 minutes max). 
+Do not terminate and run multiple times.
+This could result in getting IP banned from MAL or being blocked from Jikan API services. 
+
 ***To Do:***
 * Read user information from an excel file. User information is previously watched anime with genres.
 * Store API requests into a file - reduces program run time and limits unecessary requests.
