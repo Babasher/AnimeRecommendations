@@ -87,18 +87,19 @@ def recommended_list(our_list, top_anime):
     recommendation = []
     flattened_list = set(flattened_list)  # Creates a set
     for item in top_anime:
-        if set(item['Genres']) & flattened_list and\
-        (number_of_matches(set(item['Genres']), set(flattened_list)) > 1):  # If both lists intersect and have
-                                                                            # more than 1 similar genre
+        genre_set = set(item['Genres'])
+        if genre_set & flattened_list and\
+                (number_of_matches(genre_set, set(flattened_list)) > 2):  # Computes subsets and determines if
+                                                                            # more than 2 similar genre
             recommendation.append(item)
 
     return recommendation
 
 
-def number_of_matches(list_one, list_two):
+def number_of_matches(set_one, set_two):
     num = 0
-    for x in list_one:
-        if x in list_two:
+    for x in set_one:
+        if x in set_two:
             num += 1
     return num
 
